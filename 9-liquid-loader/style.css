@@ -4,20 +4,51 @@
     box-sizing: border-box;
 }
 
+body {
+    animation: animateBg 10s linear infinite;
+}
+
+@keyframes animateBg {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(180deg);
+
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+    
+}
 section {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #000000;
-}
+    background: #1e1d1d; }
+
+
 
 .loader {
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
+    filter: url(#gooey);
+    animation: animate 16s  linear infinite;
 
 }
+
+
+.loader:hover {
+    background: #ffffff;
+    box-shadow:  0 0 5px #ffffff,
+    0 0 25px #ffffff,
+    0 0 50px #ffffff,
+    0 0 200px #ffffff; 
+}
+
+
 .loader span {
     position: absolute;
     top: 0;
@@ -54,4 +85,9 @@ section {
         transform: rotate(360deg);
     }
     
+}
+
+svg {
+    width: 0;
+    height: 0;
 }
